@@ -1,0 +1,15 @@
+{
+  "name": "monkey_wasm",
+  "collaborators": [
+    "Shion Yamashita <shioyama1118@gmail.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "monkey_wasm_bg.wasm",
+    "monkey_wasm.js",
+    "monkey_wasm.d.ts"
+  ],
+  "module": "monkey_wasm.js",
+  "types": "monkey_wasm.d.ts",
+  "sideEffects": "false"
+}

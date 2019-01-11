@@ -1,0 +1,15 @@
+[package]
+name = "monkey_wasm"
+version = "0.1.0"
+authors = ["Shion Yamashita <shioyama1118@gmail.com>"]
+edition = "2018"
+
+[[bin]]
+name = "monkey_repl"
+path = "src/bin/main.rs"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
