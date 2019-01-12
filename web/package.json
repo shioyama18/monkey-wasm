@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "description": "Monkey Playground",
   "scripts": {
-    "build": "NODE_ENV=production webpack --config webpack.config.js",
-    "start": "webpack-dev-server",
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.5.2",
-    "gh-pages": "^2.0.1",
     "hello-wasm-pack": "^0.1.0",
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.16.3",

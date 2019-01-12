@@ -11,7 +11,7 @@ module.exports = {
     path: DIST_PATH,
     filename: 'bundle.[hash].js',
   },
-  mode: "production",
+  mode: "development",
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(SRC_PATH, 'index.html'),

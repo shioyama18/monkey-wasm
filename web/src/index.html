@@ -1,21 +1,55 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
   <head>
     <title>Monkey Playground</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <link rel="stylesheet" href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600' type='text/css' />
+    <link rel="stylesheet" href="//shioyama18.github.io/css/liquorice.css">
+    <link rel="stylesheet" href="//shioyama18.github.io/css/normalize.3.0.1.css" />
     <script src="js/bootstrap.js"></script>
+    <style type="text/css">
+      <!--
+          textarea {
+              width: 100%;
+              resize: none;
+          }
+　　　　　　　　  
+        --> 
+    </style>
   </head>
 
   <body>
-    <div id="header">
-      <button id="run">Run</button>
-      <button id="github" onclick="location.href='https://github.com/shioyama18/monkey-wasm'">GitHub</button>
+    <header class="li-page-header">
+      <div class="container">
+        <div class="row">
+          <div class="sixteen columns">
+            <div class="li-brand li-left">
+              Monkey Playground
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="sixteen columns">
+          <p class="run_button">
+            <button id="run">Run</button>
+          </p>
+          <p class="editor">
+			<h3>Editor</h3>
+            <textarea rows="10" id="source"></textarea>
+          </p>
+          <p class="console">
+			<h3>Output</h3>
+            <pre><code id="output"></code></pre>
+          </p>
+        </div>
+      </div>
     </div>
-    <div class="editor">
-      <textarea id="source"></textarea>
-    </div>
-    <div class="console">
-      <pre><code id="output"></code></pre>
-    </div>
+
   </body>
 
   <footer>
