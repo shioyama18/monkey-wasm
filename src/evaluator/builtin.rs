@@ -1,5 +1,5 @@
 use crate::evaluator::error::*;
-use crate::evaluator::object::*;
+use crate::object::*;
 
 use std::fmt;
 use std::rc::Rc;

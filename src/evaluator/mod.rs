@@ -1,13 +1,12 @@
 pub mod builtin;
 pub mod environment;
 pub mod error;
-pub mod object;
 
 use self::builtin::*;
 use self::environment::*;
 use self::error::*;
-use self::object::*;
 use crate::ast::*;
+use crate::object::*;
 use crate::token::*;
 
 use std::cell::RefCell;

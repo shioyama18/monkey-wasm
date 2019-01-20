@@ -1,4 +1,4 @@
-use crate::evaluator::object::*;
+use crate::object::*;
 use std::cell::RefCell;
 use std::collections::HashMap;
 use std::rc::Rc;
