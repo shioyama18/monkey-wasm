@@ -4,13 +4,12 @@ Rust implementation of Monkey programming language from the book *Writing an Int
 This interpreter is also compiled into WebAssembly format so it can run on browser.
 
 ## Prerequisite
-*wasm-pack* and *npm* are unnecessary if you are only running the REPL
 ### Install Rust Toolchain
 
 [Follow these instructions to install Rust Toolchain](https://www.rust-lang.org/tools/install)
 
 ### Install npm
-
+*npm* is not necessary if you are only running the REPL
 [Follow these instructions to install npm](https://www.npmjs.com/get-npm)
 
 If you already have npm installed, make sure it is up to date with the command below:
