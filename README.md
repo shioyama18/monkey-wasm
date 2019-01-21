@@ -42,26 +42,29 @@ Feel free to type in commands
 $ wasm-pack build
 ```
 
-2. Install the dependencies  
+2. Install the dependencies
+
 In the *web* directory, run *npm install* to install the local development server and its dependencies.
 
 ```bash
 $ sudo npm install
 ```
 
-3. Use the local package in *web*  
-   * In the *pkg* directory, run *npm link* so that the local package can be depended upon by other local packages without publishing them to npm.
+3. Use the local package in *web*
+
+In the *pkg* directory, run *npm link* so that the local package can be depended upon by other local packages without publishing them to npm.
 
 ```bash
 $ sudo npm link
 ```
 
-   * In the *web* directory, run *npm link monkey_wasm* to use the linked verstion of the monkey_wasm.
+In the *web* directory, run *npm link monkey_wasm* to use the linked verstion of the monkey_wasm.
 
 ```bash
 $ sudo npm link monkey_wasm
 ```
 
-4. Serving Locally  
+4. Serving Locally
+
 Run the server with *npm run start* and navigate your Web browser to http://localhost:8080/ and you should be able to run monkey language on the browser.
 
