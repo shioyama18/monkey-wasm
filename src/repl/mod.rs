@@ -1,38 +1,56 @@
+use rustyline::error::ReadlineError;
+use rustyline::Editor;
+
 use crate::evaluator::environment::*;
 use crate::evaluator::*;
 use crate::parser::*;
 
 use std::cell::RefCell;
-use std::io::Write;
 use std::rc::Rc;
 
 pub fn start() {
+    let mut rl = Editor::<()>::new();
     let env: Rc<RefCell<Environment>> = Rc::new(RefCell::new(Default::default()));
 
+    println!("Welcome to the Monkey programming language!");
+    println!("Feel free to type in commands");
+
     loop {
-        print!(">> ");
-        std::io::stdout().flush().expect("Flush to stdout failed.");
+        match rl.readline(">> ") {
+            Ok(line) => {
+                rl.add_history_entry(line.as_ref());
 
-        let mut input = String::new();
-        let _ = std::io::stdin().read_line(&mut input);
+                if line.trim() == "exit" {
+                    break;
+                }
 
-        if input == "exit\n" {
-            break;
-        }
-
-        match parse(&input) {
-            Ok(node) => match eval(node, &Rc::clone(&env)) {
-                Ok(evaluated) => {
-                    if !evaluated.is_empty() {
-                        println!("{}", evaluated)
+                match parse(&line) {
+                    Ok(node) => match eval(node, &Rc::clone(&env)) {
+                        Ok(evaluated) => {
+                            if !evaluated.is_empty() {
+                                println!("{}", evaluated)
+                            }
+                        }
+                        Err(err) => eprintln!("{}", err),
+                    },
+                    Err(errors) => {
+                        for e in errors {
+                            eprintln!("{}", e);
+                        }
                     }
                 }
-                Err(err) => eprintln!("{}", err),
-            },
-            Err(errors) => {
-                for e in errors {
-                    eprintln!("{}", e);
-                }
+            }
+            Err(ReadlineError::Interrupted) => {
+                println!("CTRL-C");
+                break;
+            }
+            Err(ReadlineError::Eof) => {
+                println!("CTRL-D");
+                break;
+            }
+            Err(err) => {
+                println!("Error: {:?}", err);
+                break;
             }
         }
     }
