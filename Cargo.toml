@@ -13,4 +13,4 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 wasm-bindgen = "0.2"
-rustyline = "3.0.0"
+rustyline = "9.1.0"
