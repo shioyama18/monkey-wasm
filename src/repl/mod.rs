@@ -18,7 +18,7 @@ pub fn start() {
     loop {
         match rl.readline(">> ") {
             Ok(line) => {
-                rl.add_history_entry(line.as_ref());
+                rl.add_history_entry(<String as AsRef<str>>::as_ref(&line));
 
                 if line.trim() == "exit" {
                     break;
